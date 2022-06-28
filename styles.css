@@ -1,0 +1,95 @@
+/*================VARIABLES===============*/
+:root {
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --mid-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  --transition: all 0.3s linear;
+  --letter-space-sml: 0.1rem;
+  --letter-space-mid: 0.25rem;
+  --letter-space-lrg: 0.5rem;
+  --clr-primary-light: #ffdd64;
+  --clr-primary: #ff8f00;
+  /* darkest grey - used for headings */
+  --clr-grey-1: hsl(209, 61%, 16%);
+  --clr-grey-2: hsl(211, 39%, 23%);
+  --clr-grey-3: hsl(209, 34%, 30%);
+  --clr-grey-4: hsl(209, 28%, 39%);
+  /* grey used for paragraphs */
+  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-6: hsl(209, 23%, 60%);
+  --clr-grey-7: hsl(211, 27%, 70%);
+  /* dark shades of secondary color*/
+  --clr-secondary-1: hsl(205, 86%, 17%);
+  --clr-secondary-2: hsl(205, 77%, 27%);
+  --clr-secondary-3: hsl(205, 72%, 37%);
+  --clr-secondary-4: hsl(205, 63%, 48%);
+  /* secondary/main color */
+  --clr-secondary-5: #49a6e9;
+  /* other colors */
+  --clr-white: #fff;
+  --clr-black: #000;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-green-dark: hsl(125, 67%, 44%);
+  --clr-green-light: hsl(125, 71%, 66%);
+}
+
+/*===================FONTS=================*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+body {
+  font-size: 62.5%;
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(to bottom right, #ffdb01, #0e197d);
+}
+.calc-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+}
+.output {
+  background-color: rgba(0, 0, 0, 0.75);
+  color: var(--clr-white);
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.previous-operand {
+  font-size: 1.5rem;
+  color: rgb(255, 255, 255, 0.75);
+}
+.current-operand {
+  font-size: 2.4rem;
+  color: #fff;
+}
+.span-two {
+  grid-column: span 2;
+}
+.calc-grid > button {
+  background-color: rgb(205, 245, 255, 0.75);
+  color: var(--clr-black);
+  letter-spacing: var(--letter-space-sml);
+  font-size: 2rem;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid var(--clr-white);
+}
+.calc-grid > button:hover,
+.calc-grid > button:focus {
+  background-color: rgb(255, 255, 255, 0.9);
+}
